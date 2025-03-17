@@ -1,0 +1,6 @@
+CREATE TABLE usuarios (
+    id CHAR(36) NOT NULL DEFAULT (UUID()),
+    login VARCHAR(100) NOT NULL,
+    senha VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+);
