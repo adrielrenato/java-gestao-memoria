@@ -1,9 +1,10 @@
-package med.voll.api.dto;
+package med.voll.api.domain.paciente.dto;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
+import med.voll.api.domain.endereco.dto.DadosEndereco;
 
-public record DadosAtualizacaoMedico(
+public record DadosAtualizacaoPaciente(
         @NotBlank
         String id,
 
