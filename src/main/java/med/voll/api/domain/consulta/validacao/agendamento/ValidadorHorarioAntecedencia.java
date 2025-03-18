@@ -1,4 +1,4 @@
-package med.voll.api.domain.consulta.validacao;
+package med.voll.api.domain.consulta.validacao.agendamento;
 
 import med.voll.api.domain.consulta.dto.DadosAgendamentoConsulta;
 import med.voll.api.domain.consulta.interfaces.ValidadorAgendamentoConsulta;
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
-@Component
+@Component("ValidadorHorarioAntecedenciaAgendamento")
 public class ValidadorHorarioAntecedencia implements ValidadorAgendamentoConsulta {
     public void validar(DadosAgendamentoConsulta dados) {
         var dataConsulta = dados.data();
