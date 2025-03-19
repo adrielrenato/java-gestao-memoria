@@ -4,19 +4,17 @@ import med.voll.api.domain.consulta.dto.DadosAgendamentoConsulta;
 import med.voll.api.domain.consulta.dto.DadosDetalhamentoConsulta;
 import med.voll.api.domain.consulta.service.AgendamentoDeConsulta;
 import med.voll.api.domain.medico.enums.Especialidade;
-import med.voll.api.infra.config.TestBeansConfig;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.json.AutoConfigureJsonTesters;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.json.JacksonTester;
-import org.springframework.context.annotation.Import;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.time.LocalDateTime;
@@ -29,7 +27,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 @SpringBootTest
 @AutoConfigureMockMvc
 @AutoConfigureJsonTesters
-@Import(TestBeansConfig.class)
 class ConsultaControllerTest {
 
     @Autowired
@@ -41,7 +38,7 @@ class ConsultaControllerTest {
     @Autowired
     private JacksonTester<DadosDetalhamentoConsulta> dadosDetalhamentoConsultaJson;
 
-    @Autowired
+    @MockitoBean
     private AgendamentoDeConsulta agendamentoDeConsulta;
 
     @Test
