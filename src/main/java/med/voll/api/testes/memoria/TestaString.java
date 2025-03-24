@@ -9,5 +9,13 @@ public class TestaString {
 
         String valor3 = new String("alura");
         System.out.println(valor1 == valor3);
+
+        StringBuilder resultado = new StringBuilder();
+
+        for (int i = 0; i < 100; i++) {
+            resultado.append(i).append(" ");
+        }
+
+        System.out.println(resultado);
     }
 }
