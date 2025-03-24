@@ -5,9 +5,12 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import med.voll.api.domain.consulta.model.Consulta;
 import med.voll.api.domain.endereco.model.Endereco;
 import med.voll.api.domain.paciente.dto.DadosAtualizacaoPaciente;
 import med.voll.api.domain.paciente.dto.DadosCadastroPaciente;
+
+import java.util.List;
 
 @Getter
 @EqualsAndHashCode(of = "id")
@@ -31,6 +34,9 @@ public class Paciente {
 
     private Boolean ativo;
 
+    @Transient
+    private List<Consulta> consultas;
+
     public Paciente(DadosCadastroPaciente dados) {
         this.nome = dados.nome();
         this.email = dados.email();
@@ -53,5 +59,9 @@ public class Paciente {
 
     public void inativar() {
         this.ativo = false;
+    }
+
+    public List<Consulta> consultas() {
+        return consultas;
     }
 }
